@@ -1,6 +1,6 @@
 require './calculator'
 
-Rspec.describe StringCalculator do
+RSpec.describe StringCalculator do
     let(:calc) { StringCalculator.new }
 
     it "return 0 for empty string" do

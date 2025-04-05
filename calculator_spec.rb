@@ -23,7 +23,7 @@ RSpec.describe StringCalculator do
         expect(calc.add("1\n2,3")).to eq(6)
     end
 
-    it "returns sum of number removing all delimiters" do
+    it "returns sum of numbers removing custom delimiters" do
         expect(calc.add("//;\n1;2")).to eq(3)
     end
 

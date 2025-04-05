@@ -5,17 +5,12 @@ class StringCalculator
 
         if str_input.start_with?("//")
             initials, str_input = str_input.split("\n")
-            puts "Initials: #{initials} & input: #{str_input}"
             custom_delimiters = initials[2..]
-            puts "Custom delimiters: #{custom_delimiters}"
             delimiters = Regexp.new(Regexp.escape(custom_delimiters))
-            puts "New delimiters: #{delimiters}"
         end
 
         numbers = str_input.split(delimiters).map(&:to_i)
-        puts "Numbers: #{numbers}"
         negative_numbers = numbers.select { |n| n < 0 }
-        puts "Negative numbers: #{negative_numbers}"
         if negative_numbers.any?
             raise "Negative numbers are not alllowed: #{negative_numbers.join(", ")}"
         end
